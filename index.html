@@ -20,7 +20,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 50px;
+    padding: 15px 40px;
     background: black;
     border-bottom: 1px solid gold;
 }
@@ -41,56 +41,71 @@ nav {
     font-weight: 700;
 }
 
-nav a {
-    color: white;
-    margin: 0 15px;
-    text-decoration: none;
+.search-box input {
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+    width: 200px;
 }
 
 /* HERO */
 .hero {
     background: url('banner.jpg') no-repeat center/cover;
-    height: 80vh;
+    height: 70vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-align: center;
 }
 
 .hero h2 {
-    font-size: 50px;
+    font-size: 45px;
     color: gold;
+}
+
+.hero p {
+    color: #ccc;
 }
 
 /* PRODUCTS */
 .products {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
     padding: 40px;
 }
 
 .card {
     background: #1a1a1a;
-    margin: 15px;
-    padding: 20px;
+    padding: 15px;
     border-radius: 10px;
-    width: 250px;
-    text-align: center;
     border: 1px solid gold;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
 }
 
 .card img {
     width: 100%;
+    border-radius: 8px;
+}
+
+.price {
+    color: gold;
+    font-weight: bold;
 }
 
 .btn {
     background: gold;
     color: black;
-    padding: 10px;
-    display: inline-block;
+    padding: 8px;
+    display: block;
     margin-top: 10px;
+    text-align: center;
     text-decoration: none;
+    border-radius: 5px;
 }
 
 /* FOOTER */
@@ -98,7 +113,6 @@ footer {
     text-align: center;
     padding: 20px;
     border-top: 1px solid gold;
-    margin-top: 30px;
 }
 </style>
 </head>
@@ -107,35 +121,47 @@ footer {
 
 <nav>
     <div class="logo">
-        <img src="logo.png" alt="The Mishra Collective Logo">
+        <img src="logo.png">
         <span>The Mishra Collective</span>
     </div>
 
-    <div>
-        <a href="#">Home</a>
-        <a href="#">Deals</a>
-        <a href="#">Categories</a>
-        <a href="#">Contact</a>
+    <div class="search-box">
+        <input type="text" placeholder="Search products...">
     </div>
 </nav>
 
 <section class="hero">
     <h2>Smart Shopping, Better Living</h2>
+    <p>Best Deals • Top Products • Trusted Picks</p>
 </section>
 
 <section class="products">
 
     <div class="card">
-        <img src="https://via.placeholder.com/250">
+        <img src="https://m.media-amazon.com/images/I/61CGHv6kmWL._SX522_.jpg">
         <h3>Wireless Earbuds</h3>
-        <p>Top Quality Sound</p>
+        <p class="price">₹999</p>
         <a href="YOUR_AFFILIATE_LINK" class="btn">Buy Now</a>
     </div>
 
     <div class="card">
-        <img src="https://via.placeholder.com/250">
+        <img src="https://m.media-amazon.com/images/I/61ZjlBOp+rL._SX522_.jpg">
         <h3>Smart Watch</h3>
-        <p>Track Fitness</p>
+        <p class="price">₹1,499</p>
+        <a href="YOUR_AFFILIATE_LINK" class="btn">Buy Now</a>
+    </div>
+
+    <div class="card">
+        <img src="https://m.media-amazon.com/images/I/71F2ccIPPLL._SX522_.jpg">
+        <h3>Bluetooth Speaker</h3>
+        <p class="price">₹799</p>
+        <a href="YOUR_AFFILIATE_LINK" class="btn">Buy Now</a>
+    </div>
+
+    <div class="card">
+        <img src="https://m.media-amazon.com/images/I/61IMRs+o0iL._SX522_.jpg">
+        <h3>Power Bank</h3>
+        <p class="price">₹699</p>
         <a href="YOUR_AFFILIATE_LINK" class="btn">Buy Now</a>
     </div>
 
